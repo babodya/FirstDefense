@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Tower
+  - StartPoint
+  - EndPoint
+  - Bullet
+  - Enemy
+  - Heart
   layers:
   - Default
   - TransparentFX
@@ -11,16 +17,16 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - PlacementLayer
-  - PlacementGhosts
   - Towers
-  - GroundEnemies
-  - FriendlyProjectiles
-  - EnemyProjectiles
-  - FlyingEnemies
-  - GroundEnemyTargettingProjectiles
+  - Point
+  - Enemy
+  - Bullet
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
