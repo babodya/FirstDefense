@@ -45,34 +45,36 @@ public class EnemyManager : MonoBehaviour
 
         if(currentTime > appearTime)
         {
-            if (EnemyName[ranEnemyIdx] == "archer")
+            GameObject currentObject = null;
+            switch (EnemyName[ranEnemyIdx])
             {
-                GameObject archer = Instantiate(archerPrefab);
+                case "archer":
 
-                archer.transform.position = transform.position;
-            }
-            if (EnemyName[ranEnemyIdx] == "knight")
-            {
-                GameObject knight = Instantiate(knightPrefab);
+                    currentObject = archerPrefab;
+                    break;
 
-                knight.transform.position = transform.position;
-            }
-            if (EnemyName[ranEnemyIdx] == "mageBlack")
-            {
-                GameObject mageBlack = Instantiate(mageBlackPrefab);
+                case "knight":
 
-                mageBlack.transform.position = transform.position;
-            }
-            if (EnemyName[ranEnemyIdx] == "zombie")
-            {
-                GameObject zombie = Instantiate(zombiePrefab);
+                    currentObject = knightPrefab;
+                    break;
 
-                zombie.transform.position = transform.position;
+                case "mageBlack":
+
+                    currentObject = mageBlackPrefab;
+                    break;
+
+                case "zombie":
+
+                    currentObject = zombiePrefab;
+                    break;
+
             }
+            GameObject enemy = Instantiate(currentObject);
+            enemy.transform.position = transform.position;
 
             currentTime = 0;
 
-            appearTime = 1.0f;
+            appearTime = 0.8f;
         }
     }
 }

@@ -4,56 +4,95 @@ using UnityEngine;
 
 public class TowerManager : MonoBehaviour
 {
-    [SerializeField]
-    GameObject bulletPrefabs;
 
-    public float spawnRateMin = 1.0f;
-    public float spawnRateMax = 1.0f;
+    Dictionary<int, TowerList> towerList;
 
-    private GameObject targets;
-    private Transform targetTransform;
+    private int needMoney = 500;
 
-    private float spawnRate;
-    private float timerAfterSpawn;
+    //private int count = 0;
+    //int [] deleteTower;
 
-    Vector3 dir;
+    public GameObject failObj;
 
-    // Start is called before the first frame update
+    FailManager failM;
+
     void Start()
     {
-        timerAfterSpawn = 0f;
-        spawnRate = Random.Range(spawnRateMin, spawnRateMax);
-        //target = FindObjectOfType<EnemyMove>().transform;
-        //target = GameObject.Find("archer2(Clone)").transform;
+        towerList = new Dictionary<int, TowerList>();
 
-        //targets = GameObject.FindGameObjectWithTag("Enemy");
+        var d = FindObjectsOfType<TowerList>();
 
-        //dir = targets.transform.position;// - transform.position;
+        for(int i = 0; i < d.Length; i++)
+        {
+            towerList.Add(i, d[i]);
 
-        //dir.Normalize();
+            towerList[i].gameObject.SetActive(false);
+        }
+
+        int randomTower = Random.Range(0, towerList.Count);
+
+        towerList[randomTower].gameObject.SetActive(true);
+
+        towerList.Remove(randomTower);
+
+        //deleteTower[0] = randomTower;
+
+        //Debug.Log(towerList.Count.ToString());
+
+        //for (int i = 0; i < towerList.Count; i++)
+        //{
+        //    Debug.Log(towerList[i].ToString());
+        //}
+
+        failM = failObj.GetComponent<FailManager>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        targets = GameObject.FindGameObjectWithTag("Enemy");
-        //GameObject targets = GameObject.Find("archer(Clone)");
 
-        if (targets != null)
+    }
+
+    public void BuyTower()
+    {
+        GameObject tm = GameObject.Find("TextManager");
+
+        GameManager gm = tm.GetComponent<GameManager>();
+
+        GameObject bm = GameObject.Find("Buttons");
+
+        GameManager bgm = bm.GetComponent<GameManager>();
+
+        int gold = gm.GetGold();
+
+        if(gold >= needMoney)
         {
-            targetTransform = FindObjectOfType<EnemyMove>().transform;
 
-            timerAfterSpawn += Time.deltaTime;
+            gm.SetGold(gold - needMoney);
 
-            if (timerAfterSpawn >= spawnRate)
+            needMoney += 500;
+
+            //buyTower button Text 변경
+            bgm.SetbuttonText(needMoney);
+
+            int randomTower = Random.Range(0, towerList.Count);
+
+            try
             {
-                timerAfterSpawn = 0;
-                GameObject bullet = Instantiate(bulletPrefabs, transform.position, transform.rotation);
-
-                bullet.transform.LookAt(targetTransform);
-
-                spawnRate = Random.Range(spawnRateMin, spawnRateMax);
+                towerList[randomTower].gameObject.SetActive(true);
             }
+            catch (KeyNotFoundException e)
+            {
+                failObj.SetActive(true);
+
+                Destroy(failObj, 2);
+            }
+
+            towerList.Remove(randomTower);
+        }
+        else
+        {
+            Debug.Log("아직 안돼!");
         }
     }
+
 }

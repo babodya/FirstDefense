@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 65923475919724998}
   - component: {fileID: 9076067901385119003}
   - component: {fileID: -8118427086975238910}
-  - component: {fileID: -1955155503950469481}
+  - component: {fileID: 3643877513572270338}
   m_Layer: 9
   m_Name: HM_cannon_bullet1
   m_TagString: Bullet
@@ -128,10 +128,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08f0b583557e51c45b3412373fca12c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 0.1
   bulletPower: 10
   music: {fileID: 8300000, guid: 1cb8ebc584b31e24380726fdd175e10c, type: 3}
---- !u!82 &-1955155503950469481
+--- !u!82 &3643877513572270338
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,7 +141,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 0f01b3f6d4ca3954ebdb232821ffda11, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

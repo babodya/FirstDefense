@@ -1,10 +1,11 @@
 fileFormatVersion: 2
-guid: 08f0b583557e51c45b3412373fca12c3
+guid: b167be400e6b93a488b1332e7b787eb3
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - music: {fileID: 8300000, guid: 1cb8ebc584b31e24380726fdd175e10c, type: 3}
+  - bulletPrefabs: {fileID: 1240887441953726, guid: ac35d1d283a73fc4eb50f779a05f156f,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

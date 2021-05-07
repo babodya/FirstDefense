@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletManager : MonoBehaviour
 {
-    public float speed = 5.0f;
+    public float speed = 0.1f;
 
     private Rigidbody bulletRigidbody;
 
@@ -12,9 +12,16 @@ public class BulletManager : MonoBehaviour
 
     GameObject targets;
 
+    public GameObject soundManager;
+
+    SoundManager sm;
 
     void Start()
     {
+        soundManager = GameObject.Find("SoundManager");
+
+        sm = soundManager.GetComponent<SoundManager>();
+
         bulletRigidbody = GetComponent<Rigidbody>();
         bulletRigidbody.velocity = transform.forward * 8f;
 
@@ -54,6 +61,8 @@ public class BulletManager : MonoBehaviour
                 PlayerPrefs.SetInt("Best Score", gm.bestScore);
                 PlayerPrefs.SetInt("Best Gold", gm.bestGold);
 
+                sm.DieSound();
+
                 Destroy(other.gameObject);
 
                 Destroy(gameObject);
@@ -68,6 +77,8 @@ public class BulletManager : MonoBehaviour
 
                 Destroy(other.gameObject);
 
+                sm.DieSound();
+
                 Destroy(gameObject);
             }
             else if (other.name == "mageDark(Clone)")
@@ -80,6 +91,8 @@ public class BulletManager : MonoBehaviour
 
                 Destroy(other.gameObject);
 
+                sm.DieSound();
+
                 Destroy(gameObject);
             }
             else if (other.name == "zombie(Clone)")
@@ -91,6 +104,8 @@ public class BulletManager : MonoBehaviour
                 PlayerPrefs.SetInt("Best Gold", gm.bestGold);
 
                 Destroy(other.gameObject);
+
+                sm.DieSound();
 
                 Destroy(gameObject);
             }

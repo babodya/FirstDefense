@@ -54,9 +54,11 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     GameObject gameOverObj;
 
+    [SerializeField]
+    Text buyTowerText;
+
     // 플레이어 하트(라이프)
     GameObject playerHeart;
-
 
     void Start()
     {
@@ -73,6 +75,7 @@ public class GameManager : MonoBehaviour
         bestLevelTxt.text = "Best : " + bestLevel;
 
         playerHeartCount = 3;
+
     }
 
     void Update()
@@ -173,4 +176,10 @@ public class GameManager : MonoBehaviour
         Debug.Log("게임 끝!");
         gameOverObj.SetActive(true);
     }
+
+    public void SetbuttonText(int value)
+    {
+        buyTowerText.text = "Buy Tower (" + value + "G)";
+    }
+
 }

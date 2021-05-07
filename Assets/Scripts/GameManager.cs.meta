@@ -3,7 +3,14 @@ guid: f9c4b202c5f2e3842b0bd8b29c690d6f
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - currentScoreTxt: {instanceID: 0}
+  - bestScoreTxt: {instanceID: 0}
+  - currentLevelTxt: {instanceID: 0}
+  - bestLevelTxt: {instanceID: 0}
+  - currentGoldTxt: {instanceID: 0}
+  - bestGoldTxt: {instanceID: 0}
+  - gameOverObj: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

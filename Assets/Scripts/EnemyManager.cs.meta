@@ -3,7 +3,15 @@ guid: f3b633cad6abfad40b1acc6be3a72a4a
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - archerPrefab: {fileID: 1601947692949862, guid: 10afd75696c53354da7f669835cf3223,
+      type: 3}
+  - knightPrefab: {fileID: 1726022557058710, guid: 2b7f0d13283bca441849b8a2c3f0133a,
+      type: 3}
+  - mageBlackPrefab: {fileID: 1589123261345258, guid: 467500a2a01a05641bd401f38acfadde,
+      type: 3}
+  - zombiePrefab: {fileID: 1044937863551718, guid: 6b1b477c4d96e484d9a70f9e7d2212f9,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
