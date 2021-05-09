@@ -9,6 +9,9 @@ public class EnemyEndPoint : MonoBehaviour
     [SerializeField]
     AudioClip music;
 
+    [SerializeField]
+    GameObject gameManager;
+
     // ÆøÆÈ ÇÁ¸®ÆÕ
     public GameObject pung;
 
@@ -24,9 +27,7 @@ public class EnemyEndPoint : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        GameObject go = GameObject.Find("Life");
-
-        GameManager gm = go.GetComponent<GameManager>();
+        GameManager gm = gameManager.GetComponent<GameManager>();
 
         gm.SetHeart(gm.GetHeart() - 1);
 

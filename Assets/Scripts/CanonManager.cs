@@ -16,34 +16,20 @@ public class CanonManager : MonoBehaviour
     private float spawnRate;
     private float timerAfterSpawn;
 
+    [SerializeField]
+    float bulletPower = 10.0f;
+
     Vector3 dir;
 
-    //[SerializeField]
-    //AudioClip music;
-    //AudioSource playSound;
-    
-    // Start is called before the first frame update
     void Start()
     {
         timerAfterSpawn = 0f;
         spawnRate = Random.Range(spawnRateMin, spawnRateMax);
-
-        //playSound.GetComponent<AudioSource>();
-        //target = FindObjectOfType<EnemyMove>().transform;
-        //target = GameObject.Find("archer2(Clone)").transform;
-
-        //targets = GameObject.FindGameObjectWithTag("Enemy");
-
-        //dir = targets.transform.position;// - transform.position;
-
-        //dir.Normalize();
     }
 
-    // Update is called once per frame
     void Update()
     {
         targets = GameObject.FindGameObjectWithTag("Enemy");
-        //GameObject targets = GameObject.Find("archer(Clone)");
 
         if (targets != null)
         {
@@ -55,9 +41,9 @@ public class CanonManager : MonoBehaviour
             {
                 timerAfterSpawn = 0;
 
-                //playSound.PlayOneShot(music);
-
                 GameObject bullet = Instantiate(bulletPrefabs, transform.position, transform.rotation);
+
+                bullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletPower);
 
                 bullet.transform.LookAt(targetTransform);
 

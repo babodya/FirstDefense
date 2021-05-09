@@ -17,6 +17,7 @@ public class EnemyMove : MonoBehaviour
 
         // 방향 크기 벡터 1로 만들기
         dir.Normalize();
+
     }
 
     void Update()
@@ -24,12 +25,5 @@ public class EnemyMove : MonoBehaviour
         // 이동하기 P = P0 +vt
         transform.position += dir * Time.deltaTime;
 
-        //transform.position += dir * 8.0f * Time.deltaTime;
     }
-
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    // point에 도달하면 enemyObject 파괴
-    //    Destroy(gameObject);
-    //}
 }

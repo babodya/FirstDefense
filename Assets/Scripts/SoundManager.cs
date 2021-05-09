@@ -14,6 +14,7 @@ public class SoundManager : MonoBehaviour
         playSound = GetComponent<AudioSource>();
     }
 
+    // Enemy DieSoudn
     public void DieSound()
     {
         playSound.PlayOneShot(music);

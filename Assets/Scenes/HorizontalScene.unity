@@ -161,8 +161,14 @@ Transform:
   - {fileID: 42116060}
   - {fileID: 1870678882}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &37048377 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3438418506726996569, guid: 16fa65825e6c9c34da78af82e076cc58,
+    type: 3}
+  m_PrefabInstance: {fileID: 408941533}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &39737879
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,7 +178,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 39737881}
-  - component: {fileID: 39737880}
   m_Layer: 5
   m_Name: Fail
   m_TagString: Untagged
@@ -180,18 +185,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &39737880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 39737879}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6393fc8d6d9f4c84cb280408d80b420b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &39737881
 RectTransform:
   m_ObjectHideFlags: 0
@@ -263,7 +256,8 @@ MonoBehaviour:
   bulletPrefabs: {fileID: 1240887441953726, guid: ac35d1d283a73fc4eb50f779a05f156f,
     type: 3}
   spawnRateMin: 1
-  spawnRateMax: 2
+  spawnRateMax: 1
+  bulletPower: 10
 --- !u!82 &65753573
 AudioSource:
   m_ObjectHideFlags: 0
@@ -474,7 +468,8 @@ MonoBehaviour:
   bulletPrefabs: {fileID: 1240887441953726, guid: ac35d1d283a73fc4eb50f779a05f156f,
     type: 3}
   spawnRateMin: 1
-  spawnRateMax: 2
+  spawnRateMax: 1
+  bulletPower: 10
 --- !u!82 &86784950
 AudioSource:
   m_ObjectHideFlags: 0
@@ -661,7 +656,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 133258883}
-  - component: {fileID: 133258884}
   m_Layer: 5
   m_Name: Buttons
   m_TagString: Untagged
@@ -691,33 +685,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -275}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &133258884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 133258882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9c4b202c5f2e3842b0bd8b29c690d6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentScore: 0
-  bestScore: 0
-  currentGold: 0
-  bestGold: 0
-  currentLevel: 0
-  bestLevel: 0
-  playerHeartCount: 0
-  currentScoreTxt: {fileID: 464677836}
-  bestScoreTxt: {fileID: 1568514773}
-  currentLevelTxt: {fileID: 1076655511}
-  bestLevelTxt: {fileID: 350034323}
-  currentGoldTxt: {fileID: 928622081}
-  bestGoldTxt: {fileID: 224408949}
-  gameOverObj: {fileID: 212574688}
-  buyTowerText: {fileID: 1362518409}
 --- !u!1 &148296649
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,6 +768,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &176311499 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3438418506726996569, guid: 16fa65825e6c9c34da78af82e076cc58,
+    type: 3}
+  m_PrefabInstance: {fileID: 4863363496729788638}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &195568561 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9210469487183143716, guid: e0d8b1a2a9df1c94790778c19ea348b8,
@@ -819,6 +792,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d63c34f9dfcee0f44b9049e12f1ded05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &200373619 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3438418506726996569, guid: 16fa65825e6c9c34da78af82e076cc58,
+    type: 3}
+  m_PrefabInstance: {fileID: 1936664868}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &212574688
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,7 +807,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 212574689}
-  - component: {fileID: 212574690}
   m_Layer: 10
   m_Name: GameOver
   m_TagString: Text
@@ -856,33 +834,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &212574690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 212574688}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9c4b202c5f2e3842b0bd8b29c690d6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentScore: 0
-  bestScore: 0
-  currentGold: 0
-  bestGold: 0
-  currentLevel: 0
-  bestLevel: 0
-  playerHeartCount: 0
-  currentScoreTxt: {fileID: 464677836}
-  bestScoreTxt: {fileID: 1568514773}
-  currentLevelTxt: {fileID: 1076655511}
-  bestLevelTxt: {fileID: 350034323}
-  currentGoldTxt: {fileID: 928622081}
-  bestGoldTxt: {fileID: 224408949}
-  gameOverObj: {fileID: 212574688}
-  buyTowerText: {fileID: 893094567}
 --- !u!1 &221940724 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9210469487183143716, guid: e0d8b1a2a9df1c94790778c19ea348b8,
@@ -1153,6 +1104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   music: {fileID: 8300000, guid: 1cb8ebc584b31e24380726fdd175e10c, type: 3}
+  gameManager: {fileID: 541052387}
   pung: {fileID: 1082826025734650, guid: cb6df1570df1c5c409bf03e6980037e6, type: 3}
 --- !u!4 &291638486 stripped
 Transform:
@@ -1169,7 +1121,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 332395381}
-  - component: {fileID: 332395382}
   m_Layer: 10
   m_Name: TextManager
   m_TagString: Text
@@ -1199,33 +1150,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &332395382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 332395380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9c4b202c5f2e3842b0bd8b29c690d6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentScore: 0
-  bestScore: 0
-  currentGold: 0
-  bestGold: 0
-  currentLevel: 0
-  bestLevel: 0
-  playerHeartCount: 0
-  currentScoreTxt: {fileID: 464677836}
-  bestScoreTxt: {fileID: 1568514773}
-  currentLevelTxt: {fileID: 1076655511}
-  bestLevelTxt: {fileID: 350034323}
-  currentGoldTxt: {fileID: 928622081}
-  bestGoldTxt: {fileID: 224408949}
-  gameOverObj: {fileID: 212574688}
-  buyTowerText: {fileID: 893094567}
 --- !u!1 &350034321
 GameObject:
   m_ObjectHideFlags: 0
@@ -1633,7 +1557,7 @@ Transform:
   - {fileID: 1716168918}
   - {fileID: 723954626}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &435432182
 MonoBehaviour:
@@ -1647,7 +1571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee31ce1c0e1cbd24d82233643756acde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  failObj: {fileID: 39737879}
+  gameManager: {fileID: 541052387}
 --- !u!1 &464677834
 GameObject:
   m_ObjectHideFlags: 0
@@ -1757,6 +1681,67 @@ Transform:
   m_Father: {fileID: 28886307}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &541052387
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 541052389}
+  - component: {fileID: 541052388}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &541052388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541052387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9c4b202c5f2e3842b0bd8b29c690d6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentScore: 0
+  bestScore: 0
+  currentGold: 0
+  bestGold: 0
+  currentLevel: 0
+  bestLevel: 0
+  playerHeartCount: 0
+  currentScoreTxt: {fileID: 464677836}
+  bestScoreTxt: {fileID: 1568514773}
+  currentLevelTxt: {fileID: 1076655511}
+  bestLevelTxt: {fileID: 350034323}
+  currentGoldTxt: {fileID: 928622081}
+  bestGoldTxt: {fileID: 224408949}
+  gameOverObj: {fileID: 212574688}
+  buyTowerText: {fileID: 1362518409}
+  playerHeart_1: {fileID: 200373619}
+  playerHeart_2: {fileID: 37048377}
+  playerHeart_3: {fileID: 176311499}
+--- !u!4 &541052389
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541052387}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &584413892 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9210255282542346024, guid: e0d8b1a2a9df1c94790778c19ea348b8,
@@ -1778,7 +1763,8 @@ MonoBehaviour:
   bulletPrefabs: {fileID: 1240887441953726, guid: ac35d1d283a73fc4eb50f779a05f156f,
     type: 3}
   spawnRateMin: 1
-  spawnRateMax: 2
+  spawnRateMax: 1
+  bulletPower: 10
 --- !u!82 &584413895
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2191,7 +2177,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 789523102}
-  - component: {fileID: 789523103}
   m_Layer: 10
   m_Name: Life
   m_TagString: Text
@@ -2221,33 +2206,6 @@ RectTransform:
   m_AnchoredPosition: {x: -11.52002, y: -1073.34}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &789523103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 789523101}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9c4b202c5f2e3842b0bd8b29c690d6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentScore: 0
-  bestScore: 0
-  currentGold: 0
-  bestGold: 0
-  currentLevel: 0
-  bestLevel: 0
-  playerHeartCount: 0
-  currentScoreTxt: {fileID: 464677836}
-  bestScoreTxt: {fileID: 1568514773}
-  currentLevelTxt: {fileID: 1076655511}
-  bestLevelTxt: {fileID: 350034323}
-  currentGoldTxt: {fileID: 928622081}
-  bestGoldTxt: {fileID: 224408949}
-  gameOverObj: {fileID: 212574688}
-  buyTowerText: {fileID: 893094567}
 --- !u!1 &801680687 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9210469487183143716, guid: e0d8b1a2a9df1c94790778c19ea348b8,
@@ -2446,7 +2404,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &893094565
 GameObject:
@@ -2548,7 +2506,8 @@ MonoBehaviour:
   bulletPrefabs: {fileID: 1240887441953726, guid: ac35d1d283a73fc4eb50f779a05f156f,
     type: 3}
   spawnRateMin: 1
-  spawnRateMax: 2
+  spawnRateMax: 1
+  bulletPower: 10
 --- !u!82 &909507885
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2817,7 +2776,8 @@ MonoBehaviour:
   bulletPrefabs: {fileID: 1240887441953726, guid: ac35d1d283a73fc4eb50f779a05f156f,
     type: 3}
   spawnRateMin: 1
-  spawnRateMax: 2
+  spawnRateMax: 1
+  bulletPower: 10
 --- !u!82 &1013312193
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3127,7 +3087,7 @@ RectTransform:
   - {fileID: 133258883}
   - {fileID: 39737881}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3361,7 +3321,8 @@ MonoBehaviour:
   bulletPrefabs: {fileID: 1240887441953726, guid: ac35d1d283a73fc4eb50f779a05f156f,
     type: 3}
   spawnRateMin: 1
-  spawnRateMax: 2
+  spawnRateMax: 1
+  bulletPower: 10
 --- !u!82 &1163651944
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3824,7 +3785,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1458854242
 GameObject:
@@ -3869,9 +3830,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3b633cad6abfad40b1acc6be3a72a4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minTime: 2
+  maxTime: 3
   currentTime: 0
   appearTime: 0
-  archerPrefab: {fileID: 1601947692949862, guid: 10afd75696c53354da7f669835cf3223,
+  archerPrefab: {fileID: 1601947692949862, guid: 9f3a2d41a8e4a89488edb74cb45a32d3,
     type: 3}
   knightPrefab: {fileID: 1726022557058710, guid: 2b7f0d13283bca441849b8a2c3f0133a,
     type: 3}
@@ -3937,7 +3900,8 @@ MonoBehaviour:
   bulletPrefabs: {fileID: 1240887441953726, guid: ac35d1d283a73fc4eb50f779a05f156f,
     type: 3}
   spawnRateMin: 1
-  spawnRateMax: 2
+  spawnRateMax: 1
+  bulletPower: 10
 --- !u!82 &1493609125
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4161,7 +4125,7 @@ Transform:
   - {fileID: 1458854243}
   - {fileID: 259226759}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1562381744 stripped
 GameObject:
@@ -4370,7 +4334,7 @@ Transform:
   - {fileID: 752139664}
   - {fileID: 1917855801}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1715297961 stripped
 GameObject:
@@ -4393,7 +4357,8 @@ MonoBehaviour:
   bulletPrefabs: {fileID: 1240887441953726, guid: ac35d1d283a73fc4eb50f779a05f156f,
     type: 3}
   spawnRateMin: 1
-  spawnRateMax: 2
+  spawnRateMax: 1
+  bulletPower: 10
 --- !u!82 &1715297964
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4830,8 +4795,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1891797219}
-        m_TargetAssemblyTypeName: TowerManager, Assembly-CSharp
-        m_MethodName: BuyTower
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: buttonAction
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4888,10 +4853,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1891797214}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee31ce1c0e1cbd24d82233643756acde, type: 3}
+  m_Script: {fileID: 11500000, guid: 7cc21df5e9c009241b132031da89a267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  failObj: {fileID: 39737879}
+  towerManager: {fileID: 435432180}
 --- !u!1 &1917855799
 GameObject:
   m_ObjectHideFlags: 0
@@ -5507,7 +5472,8 @@ MonoBehaviour:
   bulletPrefabs: {fileID: 1240887441953726, guid: ac35d1d283a73fc4eb50f779a05f156f,
     type: 3}
   spawnRateMin: 1
-  spawnRateMax: 2
+  spawnRateMax: 1
+  bulletPower: 10
 --- !u!82 &2051931048
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5625,7 +5591,8 @@ MonoBehaviour:
   bulletPrefabs: {fileID: 1240887441953726, guid: ac35d1d283a73fc4eb50f779a05f156f,
     type: 3}
   spawnRateMin: 1
-  spawnRateMax: 2
+  spawnRateMax: 1
+  bulletPower: 10
 --- !u!82 &2096659316
 AudioSource:
   m_ObjectHideFlags: 0

@@ -57,8 +57,18 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     Text buyTowerText;
 
-    // 플레이어 하트(라이프)
-    GameObject playerHeart;
+    // 플레이어 하트(라이프-1)
+    [SerializeField]
+    GameObject playerHeart_1;
+
+    // 플레이어 하트(라이프-2)
+    [SerializeField]
+    GameObject playerHeart_2;
+
+    // 플레이어 하트(라이프-3)
+    [SerializeField]
+    GameObject playerHeart_3;
+
 
     void Start()
     {
@@ -149,21 +159,15 @@ public class GameManager : MonoBehaviour
         switch (playerHeartCount)
         {
             case 0:
-                playerHeart = GameObject.Find("Heart_01");
-                playerHeart.SetActive(false);
+                playerHeart_1.SetActive(false);
                 GameOver();
                 break;
             case 1:
-                playerHeart = GameObject.Find("Heart_02");
-                playerHeart.SetActive(false);
+                playerHeart_2.SetActive(false);
                 break;
             case 2:
-                playerHeart = GameObject.Find("Heart_03");
-                playerHeart.SetActive(false);
+                playerHeart_3.SetActive(false);
                 break;
-            //case 3:
-            //    GameOver();
-            //    break;
         }
     }
     public int GetHeart()
