@@ -4,32 +4,37 @@ using UnityEngine;
 
 public class EnemyEndPoint : MonoBehaviour
 {
-    AudioSource playSound;
-
+    // gameManager °´Ã¼
     [SerializeField]
-    AudioClip music;
+    GameObject gameManagerObj;
 
-    [SerializeField]
-    GameObject gameManager;
+    // gameManager script
+    GameManager gameManager;
 
     // ÆøÆÈ ÇÁ¸®ÆÕ
     public GameObject pung;
 
+    // soundManager °´Ã¼
+    [SerializeField]
+    GameObject soundManagerObj;
+
+    // gameManager script
+    SoundManager soundManager;
+
     void Start()
     {
-        playSound = GetComponent<AudioSource>();
+        // gameManager °´Ã¼ »ý¼º
+        gameManager = gameManagerObj.GetComponent<GameManager>();
+
+        // soundManager °´Ã¼ »ý¼º
+        soundManager = soundManagerObj.GetComponent<SoundManager>();
     }
 
-    void Update()
-    {
-
-    }
-
+    // Ãæµ¹ ¹ß»ý½Ã
     private void OnCollisionEnter(Collision collision)
     {
-        GameManager gm = gameManager.GetComponent<GameManager>();
-
-        gm.SetHeart(gm.GetHeart() - 1);
+        // player ÇÏÆ® - 1°³
+        gameManager.SetHeart(gameManager.GetHeart() - 1);
 
         // pung ÇÁ¸®ÆÕ ¸¸µç´Ù.
         GameObject pungPung = Instantiate(pung);
@@ -40,7 +45,8 @@ public class EnemyEndPoint : MonoBehaviour
         // point À§Ä¡¿¡ ³õ´Â´Ù.
         pungPung.transform.position = gameObject.transform.position;
 
-        playSound.PlayOneShot(music);
+        // SoundManager¿¡ Á¤ÀÇ ÇØ³õÀº À¸¾Ç ¼Ò¸® È£Ãâ
+        soundManager.DieSound();
 
         // 2ÃÊ ÈÄ ÆÄ±« ÀÌÆåÆ® ÆÄ±«
         Destroy(pungPung, 0.3f);

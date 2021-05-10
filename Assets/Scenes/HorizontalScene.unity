@@ -1103,9 +1103,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef4b292001ac6f14a92270ed77114ccb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  music: {fileID: 8300000, guid: 1cb8ebc584b31e24380726fdd175e10c, type: 3}
-  gameManager: {fileID: 541052387}
+  gameManagerObj: {fileID: 541052387}
   pung: {fileID: 1082826025734650, guid: cb6df1570df1c5c409bf03e6980037e6, type: 3}
+  soundManagerObj: {fileID: 1438644318}
 --- !u!4 &291638486 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7644180651935043962, guid: 16fa65825e6c9c34da78af82e076cc58,
